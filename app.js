@@ -2,9 +2,11 @@ var app=require('koa')();
 var swig=require('koa-swig');
 var router=require('koa-router')();
 var static=require('koa-static');
+var mongoose=require('mongoose');
 
 var path=require('path');
 
+var config = require('./config/config.js');
 var route=require('./routes/route.js');
 var admin_route=require('./routes/admin_route.js');
 
@@ -15,6 +17,9 @@ app.context.render=swig({
 	cache:'memory',
 	ext:'html',
 });
+
+// 初始化配置
+require('./config/init.js')(app, mongoose);
 
 // 静态文件服务中间件
 app.use(static(__dirname+'/public'));
@@ -31,11 +36,11 @@ app.use(function *(next) {
 });
 
 app.on('error',function (err,ctx) {
-	// log.error('server error',err,ctx);
 	if (process.env.NODE_ENV!='production') {
 		this.body='500 server error';
 		console.error(err.message);
 		console.error(err);
+		log.error('server error',err,ctx);
 	}
 });
 
@@ -43,8 +48,6 @@ app.use(function *() {
 	throw new Error('server error');
 });
 
-// app.use(function *(next) {
-// 	yield this.render('admin/index.html'); 
-// });
+
 app.listen(3000);
-console.log('app listens on 3000 port');
+console.log('app listens on 3000 port'); 
