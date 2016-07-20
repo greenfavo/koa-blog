@@ -3,6 +3,7 @@ var swig=require('koa-swig');
 var router=require('koa-router')();
 var static=require('koa-static');
 var mongoose=require('mongoose');
+var bodyParser = require('koa-bodyparser');
 
 var path=require('path');
 
@@ -23,6 +24,8 @@ require('./config/init.js')(app, mongoose);
 
 // 静态文件服务中间件
 app.use(static(__dirname+'/public'));
+
+app.use(bodyParser());
 
 // 路由
 route(router);
@@ -50,4 +53,4 @@ app.use(function *() {
 
 
 app.listen(3000);
-console.log('app listens on 3000 port'); 
+console.log('app is listening on 3000 port'); 

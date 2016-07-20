@@ -3,11 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>新建文章</title>
-	<link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<a href="/create" class="btn btn-default">新增文章</a>
-	<form action="" method="post">
+	<form action="/admin/handleCreate" method="post">
 		<input type="text" name="title" placeholder="文章标题" /><br/>
 		<textarea name="content"  cols="30" rows="10"></textarea>
 		<input type="submit" value="提交">
