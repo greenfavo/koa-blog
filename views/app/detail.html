@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="detail">
+	<h2>{{post.title}}</h2>
+	<p>
+		<span>时间：{{post.time|date('Y-m-d H:i:s',-480)}}</span>
+		<span>浏览量({{post.views}})</span>
+	</p>
+	<div>{{post.content}}</div>
+</main>
+{% endblock %}

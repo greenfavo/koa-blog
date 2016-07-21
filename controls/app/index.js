@@ -3,11 +3,14 @@ module.exports={
 	home:function *(next) {
 		try {
 			var posts=yield models.Article.find({});
+			var hotPosts=yield models.Article.find({}).limit(5).sort({views:-1});
 			yield this.render('app/index.html',{
-				posts:posts
+				title:'首页',
+				posts:posts,
+				hotPosts:hotPosts
 			});
 		} catch(e) {
-			// statements
+			this.body='加载错误';
 			console.log(e);
 		}
 	}

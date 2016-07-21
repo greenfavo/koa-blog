@@ -3,25 +3,42 @@ a{
 }
 body{
 	width: 1000px;
-	overflow: hidden;
 	margin:0 auto;
 }
 header{
 	overflow: hidden;
 }
-header li{
+ul{
+	padding: 0;
+}
+li{
 	list-style: none;
+}
+header li{
 	float: left;
+	padding: 0;
 	margin-right: 20px;
 }
-main{
+main.home{
 	width: 700px;
 	float: left;
 	margin-bottom: 20px;
+	margin-right: 20px;
+}
+.home section{
+	border-bottom: 1px solid gray;
 }
 aside{
-	width: 250px;
+	width: 280px;
 	float: left;
+}
+.hotList{
+	margin-bottom: 10px;
+}
+.hot{
+	display: inline-block;
+	margin-left: 20px;
+	color: gray;	
 }
 footer{
 	clear: both;

@@ -23,7 +23,7 @@
 			<td>{{loop.index}}</td>
 			<td>{{post.title}}</td>
 			<!-- 国际标准时间与中国时间相差8小时=480分钟 -->
-			<td>{{post.time|date('Y-m-d h:i:s',-480)}}</td>
+			<td>{{post.time|date('Y-m-d H:i:s',-480)}}</td>
 			<td>{{post.views}}</td>
 			<td>
 				<a href="/admin/delete?id={{post.id}}">删除</a>

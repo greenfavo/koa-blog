@@ -1,39 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>首页</title>
-	<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-	<header>
-		<ul>
-			<li><a href="/">首页</a></li>
-			<li><a href="/login">登录</a></li>
-			<li><a href="/register">注册</a></li>
-		</ul>
-	</header>
-	<main>
-		<section>
-			<h2>标题</h2>
-			<p>
-				<span>作者</span>
-				<span>时间</span>
-			</p>
-			<div>内容</div>
-		</section>
-	</main>
-	<aside>
-		<h2>热门文章</h2>
-		<ul>
-			<li>
-				<a href="/article?id=123">标题</a>
-				<span>浏览量(123)</span>
-			</li>
-		</ul>
-	</aside>
-	<footer>
-		<p>版权所有</p>
-	</footer>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+<main class="home">
+	{% for post in posts %}
+	<section>
+		<h2><a href="/article/{{post.id}}">{{post.title}}</a></h2>
+		<p>
+			<span>作者：{{post.author}}</span>
+			<span>时间：{{post.time|date('Y-m-d H:i:s',-480)}}</span>
+		</p>
+		<div>{{post.content}}</div>
+	</section>
+	{% endfor %}
+</main>
+<aside>
+	<h2>热门文章</h2>
+	<ul>
+		{% for hotPost in hotPosts %}
+		<li class="hotList">
+			<a href="/article/{{hotPost.id}}">{{hotPost.title}}</a>
+			<span class="hot">浏览量({{hotPost.views}})</span>
+		</li>
+		{% endfor %}
+	</ul>
+</aside>
+{% endblock %}
