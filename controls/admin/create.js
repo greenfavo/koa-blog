@@ -2,13 +2,16 @@ var models=require('../../models/models.js');
 
 module.exports={
 	show:function *(next) {
-		yield this.render('admin/create.html');
+		yield this.render('admin/create.html',{
+			title:'新建文章',
+			username:this.session.username
+		});
 	},
 	handleCreate:function *(next) {
 		var doc={
 			title:this.request.body.title,
 			content:this.request.body.content,
-			author:'nancy',
+			author:this.session.username,
 			time:new Date()
 		};
 		try {

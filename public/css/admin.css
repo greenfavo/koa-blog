@@ -1,0 +1,18 @@
+li{
+	list-style: none;
+	padding: 0;
+}
+ul{
+	padding: 0;
+}
+body{
+	width: 1000px;
+	margin: 0 auto;
+}
+header{
+	overflow: hidden;
+}
+header li{
+	float: left;
+	margin-right: 20px;
+}

@@ -5,7 +5,9 @@ module.exports={
 		try {
 			var posts= yield models.Article.find({});
 			yield this.render('admin/admin.html',{
-				posts:posts
+				posts:posts,
+				title:'文章管理',
+				username:this.session.username
 			});
 		} catch(e) {
 			this.body='发生错误';

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>新建文章</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+	{% block content %}
 	<form action="/admin/handleCreate" method="post">
 		<input type="text" name="title" placeholder="文章标题" /><br/>
 		<textarea name="content"  cols="30" rows="10"></textarea>
 		<input type="submit" value="提交">
 	</form>
-</body>
-</html>
+	{% endblock %}

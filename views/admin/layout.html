@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<header>
+	<ul>
+		<li><a href="/admin">文章管理</a></li>
+		<li><a href="/admin/create">新建文章</a></li>
+		<li>欢迎你,{{username}}</li>
+		<li><a href="/loginOut">注销</a></li>
+		<li><a href="/">主页</a></li>
+	</ul>
+</header>
+	<h2>{{title}}</h2>
+	<main>
+		{% block content %}
+
+		{% endblock %}
+	</main>	
+</body>
+</html>

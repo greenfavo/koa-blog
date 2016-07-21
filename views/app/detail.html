@@ -3,6 +3,7 @@
 <main class="detail">
 	<h2>{{post.title}}</h2>
 	<p>
+		<span>作者:{{post.author}}</span>
 		<span>时间：{{post.time|date('Y-m-d H:i:s',-480)}}</span>
 		<span>浏览量({{post.views}})</span>
 	</p>

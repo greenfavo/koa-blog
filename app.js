@@ -4,6 +4,7 @@ var router=require('koa-router')();
 var static=require('koa-static');
 var mongoose=require('mongoose');
 var bodyParser = require('koa-bodyparser');
+var session=require('koa-session');
 
 var path=require('path');
 
@@ -11,7 +12,7 @@ var config = require('./config/config.js');
 var route=require('./routes/route.js');
 var admin_route=require('./routes/admin_route.js');
 
-
+//swig模板引擎配置
 app.context.render=swig({
 	root:path.join(__dirname,'views'),
 	autoescape:true,
@@ -25,11 +26,16 @@ require('./config/init.js')(app, mongoose);
 // 静态文件服务中间件
 app.use(static(__dirname+'/public'));
 
+//中间件
 app.use(bodyParser());
 
+//session
+app.keys=[config.cookieSecret];
+app.use(session(app));
+
 // 路由
-route(router);
 admin_route(router);
+route(router);
 app.use(router.routes());
 
 //错误处理

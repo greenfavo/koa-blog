@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>文章管理</title>
-	<link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-	<h2>文章管理</h2>
-	<a href="/admin/create">新增文章</a>
-	<table class="table">
-		<thead>
-			<tr>
-				<td>编号</td>
-				<td>标题</td>
-				<td>时间</td>
-				<td>浏览量</td>
-				<td>操作</td>
-			</tr>
-		</thead>
-		{% for post in posts %}
+{% extends 'layout.html' %}
+{% block content %}
+<table class="table">
+	<thead>
 		<tr>
-			<td>{{loop.index}}</td>
-			<td>{{post.title}}</td>
-			<!-- 国际标准时间与中国时间相差8小时=480分钟 -->
-			<td>{{post.time|date('Y-m-d H:i:s',-480)}}</td>
-			<td>{{post.views}}</td>
-			<td>
-				<a href="/admin/delete?id={{post.id}}">删除</a>
-			</td>
+			<td>编号</td>
+			<td>标题</td>
+			<td>时间</td>
+			<td>浏览量</td>
+			<td>操作</td>
 		</tr>
-		{% endfor %}
-	</table>
-</body>
-</html>
+	</thead>
+	{% for post in posts %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{post.title}}</td>
+		<!-- 国际标准时间与中国时间相差8小时=480分钟 -->
+		<td>{{post.time|date('Y-m-d H:i:s',-480)}}</td>
+		<td>{{post.views}}</td>
+		<td>
+			<a href="/admin/delete?id={{post.id}}">删除</a>
+			<a href="/article/{{post.id}}">查看文章</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

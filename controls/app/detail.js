@@ -11,6 +11,7 @@ module.exports={
 			yield this.render('app/detail.html',{
 				title:post.title,
 				post:post,
+				username:this.session.username
 			});
 		} catch(e) {
 			this.body='加载文章错误';

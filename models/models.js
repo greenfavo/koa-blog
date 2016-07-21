@@ -5,7 +5,7 @@ var app=require('koa')();
 // 创建模式
 // 用户模式
 var userSchema = mongoose.Schema({
-    userName: String,
+    username: String,
     password: String,
 });
 // 文章模式

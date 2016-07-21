@@ -7,6 +7,7 @@ body{
 }
 header{
 	overflow: hidden;
+	margin-bottom: 10px;
 }
 ul{
 	padding: 0;

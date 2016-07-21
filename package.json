@@ -1,7 +1,7 @@
 {
   "name": "koa-blog",
   "version": "1.0.0",
-  "description": "a blg powered by koa",
+  "description": "a blog demo powered by koa",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
     "koa-bodyparser": "^2.2.0",
     "koa-logger": "^1.3.0",
     "koa-router": "^5.4.0",
+    "koa-session": "^3.3.1",
     "koa-static": "^2.0.0",
     "koa-swig": "^2.2.0",
     "mongoose": "^4.5.5"
