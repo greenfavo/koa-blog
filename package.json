@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "a blog demo powered by koa",
   "main": "app.js",
+  "repository":"https://github.com/greenfavo/koa-blog.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app"
   },
   "keywords": [
     "koa",
-    "blog"
+    "blog",
+    "CURD"
   ],
   "author": "nancy",
   "license": "MIT",
