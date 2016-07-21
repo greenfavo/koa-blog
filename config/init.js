@@ -23,6 +23,6 @@ module.exports = function(app, mongoose){
             mongoose.connect(config.mongo.production.connectionString, config.mongo.opts);
             break;
         default:
-            throw new Error(app.get('env') + '是不被连接数据库的执行环境');
+            throw new Error(app.env + '是不被连接数据库的执行环境');
     }
 };

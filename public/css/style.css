@@ -1,0 +1,28 @@
+a{
+	text-decoration:none;
+}
+body{
+	width: 1000px;
+	overflow: hidden;
+	margin:0 auto;
+}
+header{
+	overflow: hidden;
+}
+header li{
+	list-style: none;
+	float: left;
+	margin-right: 20px;
+}
+main{
+	width: 700px;
+	float: left;
+	margin-bottom: 20px;
+}
+aside{
+	width: 250px;
+	float: left;
+}
+footer{
+	clear: both;
+}

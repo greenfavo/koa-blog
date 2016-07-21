@@ -43,7 +43,6 @@ app.on('error',function (err,ctx) {
 		this.body='500 server error';
 		console.error(err.message);
 		console.error(err);
-		log.error('server error',err,ctx);
 	}
 });
 

@@ -1,5 +1,4 @@
+var home=require('../controls/app/index.js');
 module.exports=function (router) {
-	router.get('/',function *(next) {
-		this.body='hello';
-	});
+	router.get('/',home.home);
 }
