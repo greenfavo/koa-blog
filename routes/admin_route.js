@@ -2,7 +2,7 @@ var create=require('../controls/admin/create.js');
 var admin=require('../controls/admin/admin.js');
 
 module.exports=function (router) {
-	// 权限控制
+	// 权限控制  
 	router.get(/^\/admin/,function *(next) {
 		if (this.session.username) {
 			yield next;

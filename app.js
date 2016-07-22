@@ -56,6 +56,5 @@ app.use(function *() {
 	throw new Error('server error');
 });
 
-
 app.listen(3000);
 console.log('app is listening on 3000 port'); 

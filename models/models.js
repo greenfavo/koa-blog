@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var app=require('koa')();
 // 模型的构建
 
 // 创建模式
@@ -7,6 +6,7 @@ var app=require('koa')();
 var userSchema = mongoose.Schema({
     username: String,
     password: String,
+    salt:String,//md5 salt
 });
 // 文章模式
 var articleSchema = mongoose.Schema({
