@@ -14,10 +14,6 @@ var articleSchema = mongoose.Schema({
     author: String,
     content: String,
     time: String,
-    age:{
-        type:Number,
-       
-    },
     views:{//浏览量
         type:Number,
         default:0
