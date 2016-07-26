@@ -12,14 +12,14 @@ module.exports={
 			title:this.request.body.title,
 			content:this.request.body.content,
 			author:this.session.username,
-			time:new Date()
+			time:new Date(),
 		};
 		try {
 			yield models.Article.create(doc);
 			this.status=303;
 			this.redirect('/admin');
 		} catch(e) {
-			this.body='保存失败';
+			this.body='保存失败: '+e.message;
 			console.log(e);
 		}
 		
